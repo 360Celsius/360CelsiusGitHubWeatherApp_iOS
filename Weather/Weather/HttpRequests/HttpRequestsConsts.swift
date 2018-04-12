@@ -12,5 +12,5 @@ class HttpRequestsConstant {
     let apiKey:String = "aa2df23d347d91a01f286584e35f2b7e"
     let apiUrl:String = "https://api.openweathermap.org/data/2.5/"
     let externalIpUrl = "https://ipinfo.io/json"
-    let locationByExternalIpUrl = "http://ip-api.com/json/"
+    let locationByExternalIpUrl = "https://ipapi.co/"
 }

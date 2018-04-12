@@ -30,13 +30,9 @@ class ViewController: UIViewController {
         
         
         
-        requests.runHttpRequestGetExternalIp(){
-            (result: String) in
-            DispatchQueue.main.async {
-                self.responceView.text = result
+        requests.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
+            requests.runHttpRequestGetCityNameByIp(externalIP: resultGetExternalIp.ip!){ (resultGetCityNameByIp: String) in
             }
-            
-            //print(result)
         }
     }
 

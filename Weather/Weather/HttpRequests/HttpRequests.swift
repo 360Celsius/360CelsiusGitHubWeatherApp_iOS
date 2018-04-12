@@ -18,7 +18,7 @@ class HttpRequests {
         jsonParser = JasonParser()
     }
     
-    func runHttpRequestGetExternalIp(complition: @escaping (_ result: String)->Void) {
+    func runHttpRequestGetExternalIp(complition: @escaping (_ result: ExternalIPObject)->Void) {
         let url = URL(string: "\(constant.externalIpUrl)")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
@@ -26,7 +26,7 @@ class HttpRequests {
                 do {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    self.jsonParser.parseExternalIPDataResponcer(jsonToParse:jsonSerialized as AnyObject)
+                    complition(self.jsonParser.parseExternalIPDataResponcer(jsonToParse:jsonSerialized as AnyObject))
                 }  catch let error as NSError {
                     print(error.localizedDescription)
                 }
@@ -39,7 +39,7 @@ class HttpRequests {
     
     
     func runHttpRequestGetCityNameByIp(externalIP:String, complition: @escaping (_ result: String)->Void) {
-        let url = URL(string: "\(constant.locationByExternalIpUrl)\(externalIP)")
+        let url = URL(string: "\(constant.locationByExternalIpUrl)\(externalIP)/json/")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if let data = data {
@@ -47,7 +47,7 @@ class HttpRequests {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     
-                    if let json = jsonSerialized, let base = json["base"] {
+                    if let json = jsonSerialized, let base = json["city"] {
                         print(base)
                         complition(base as! String)
                     }
@@ -72,10 +72,6 @@ class HttpRequests {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     
-                    if let json = jsonSerialized, let base = json["base"] {
-                        print(base)
-                        complition(base as! String)
-                    }
                     
                 }  catch let error as NSError {
                     print(error.localizedDescription)
@@ -97,10 +93,6 @@ class HttpRequests {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     
-//                    if let json = jsonSerialized, let base = json["base"] {
-//                        //print(base)
-//                        complition(base as! String)
-//                    }
                     
                 }  catch let error as NSError {
                     print(error.localizedDescription)
@@ -122,10 +114,6 @@ class HttpRequests {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     
-                    //                    if let json = jsonSerialized, let base = json["base"] {
-                    //                        //print(base)
-                    //                        complition(base as! String)
-                    //                    }
                     
                 }  catch let error as NSError {
                     print(error.localizedDescription)
