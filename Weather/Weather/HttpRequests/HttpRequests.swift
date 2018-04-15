@@ -46,11 +46,7 @@ class HttpRequests {
                 do {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    
-                    if let json = jsonSerialized, let base = json["city"] {
-                        print(base)
-                        complition(base as! String)
-                    }
+                    self.jsonParser.parseCityNameByIpPDataResponcer(jsonToParse:jsonSerialized as AnyObject)
                     
                 }  catch let error as NSError {
                     print(error.localizedDescription)

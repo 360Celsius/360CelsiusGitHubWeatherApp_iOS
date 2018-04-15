@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/HttpRequests/HttpRequests.swift"
-            timestampString = "545256599.025829"
+            timestampString = "545503770.576501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/HttpRequests/HttpRequests.swift"
-            timestampString = "545256599.026365"
+            timestampString = "545503770.576589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -202,61 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/HttpRequests/HttpRequests.swift"
-            timestampString = "545256599.026746"
+            timestampString = "545503770.5766619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "runHttpRequestGetCityNameByIp(externalIP:complition:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather/HttpRequests/HttpRequests.swift"
-            timestampString = "545256599.027108"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "runHttpRequestGetCityNameByIp(externalIP:complition:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Weather.HttpRequests.runHttpRequestGetCityNameByIp(externalIP: Swift.String, complition: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/MyWorkSpace/MyGIT/360CelsiusGitHubWeatherApp_iOS/Weather/Weather/HttpRequests/HttpRequests.swift"
-                  timestampString = "545256173.062785"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "1384">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Weather.HttpRequests.runHttpRequestGetCityNameByIp(externalIP: Swift.String, complition: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/MyWorkSpace/MyGIT/360CelsiusGitHubWeatherApp_iOS/Weather/Weather/HttpRequests/HttpRequests.swift"
-                  timestampString = "545256173.068217"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "2365">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

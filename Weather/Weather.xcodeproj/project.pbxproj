@@ -10,6 +10,9 @@
 		0B3896A7207BB4E800F62611 /* HttpRequestsConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3896A6207BB4E800F62611 /* HttpRequestsConsts.swift */; };
 		0B43D326207F28F1003D0ED4 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43D325207F28F1003D0ED4 /* JsonParser.swift */; };
 		0B43D329207F294D003D0ED4 /* ExternalIPObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43D328207F294D003D0ED4 /* ExternalIPObject.swift */; };
+		0B43D32B208110B5003D0ED4 /* CityByIPObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43D32A208110B5003D0ED4 /* CityByIPObject.swift */; };
+		0B4A7A97208205F900761A4D /* WheatherData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A7A95208205F900761A4D /* WheatherData.xcdatamodeld */; };
+		0B4A7A9A20827C2200761A4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A7A9920827C2200761A4D /* CoreDataManager.swift */; };
 		0B6C6CB9207910850006FDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C6CB8207910850006FDCE /* AppDelegate.swift */; };
 		0B6C6CBB207910850006FDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C6CBA207910850006FDCE /* ViewController.swift */; };
 		0B6C6CBE207910850006FDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6C6CBC207910850006FDCE /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		0B3896A6207BB4E800F62611 /* HttpRequestsConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestsConsts.swift; sourceTree = "<group>"; };
 		0B43D325207F28F1003D0ED4 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		0B43D328207F294D003D0ED4 /* ExternalIPObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalIPObject.swift; sourceTree = "<group>"; };
+		0B43D32A208110B5003D0ED4 /* CityByIPObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityByIPObject.swift; sourceTree = "<group>"; };
+		0B4A7A96208205F900761A4D /* WheatherData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WheatherData.xcdatamodel; sourceTree = "<group>"; };
+		0B4A7A9920827C2200761A4D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0B6C6CB5207910850006FDCE /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6C6CB8207910850006FDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6C6CBA207910850006FDCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				0B43D328207F294D003D0ED4 /* ExternalIPObject.swift */,
+				0B43D32A208110B5003D0ED4 /* CityByIPObject.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -66,6 +73,15 @@
 				0B43D325207F28F1003D0ED4 /* JsonParser.swift */,
 			);
 			path = JsonParserManager;
+			sourceTree = "<group>";
+		};
+		0B4A7A982082060500761A4D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0B4A7A95208205F900761A4D /* WheatherData.xcdatamodeld */,
+				0B4A7A9920827C2200761A4D /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0B6C6CAC207910850006FDCE = {
@@ -87,6 +103,7 @@
 		0B6C6CB7207910850006FDCE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				0B4A7A982082060500761A4D /* CoreData */,
 				0B43D327207F28FE003D0ED4 /* JsonParserManager */,
 				0B3896A8207C7E6900F62611 /* ModelObjects */,
 				0B3896A5207BB3D100F62611 /* HttpRequests */,
@@ -171,10 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B43D32B208110B5003D0ED4 /* CityByIPObject.swift in Sources */,
 				0B6C6CCB207912470006FDCE /* HttpRequests.swift in Sources */,
 				0B3896A7207BB4E800F62611 /* HttpRequestsConsts.swift in Sources */,
+				0B4A7A97208205F900761A4D /* WheatherData.xcdatamodeld in Sources */,
 				0B43D326207F28F1003D0ED4 /* JsonParser.swift in Sources */,
 				0B6C6CBB207910850006FDCE /* ViewController.swift in Sources */,
+				0B4A7A9A20827C2200761A4D /* CoreDataManager.swift in Sources */,
 				0B43D329207F294D003D0ED4 /* ExternalIPObject.swift in Sources */,
 				0B6C6CB9207910850006FDCE /* AppDelegate.swift in Sources */,
 			);
@@ -372,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0B4A7A95208205F900761A4D /* WheatherData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0B4A7A96208205F900761A4D /* WheatherData.xcdatamodel */,
+			);
+			currentVersion = 0B4A7A96208205F900761A4D /* WheatherData.xcdatamodel */;
+			path = WheatherData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0B6C6CAD207910850006FDCE /* Project object */;
 }

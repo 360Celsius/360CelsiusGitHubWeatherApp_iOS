@@ -12,9 +12,11 @@ import Foundation
 class JasonParser {
     
     let externalIPObject:ExternalIPObject
+    let cityByIPObject:CityByIPObject
     
     init(){
          externalIPObject = ExternalIPObject()
+         cityByIPObject = CityByIPObject()
     }
     
     func parseExternalIPDataResponcer(jsonToParse:AnyObject) -> ExternalIPObject {
@@ -70,5 +72,21 @@ class JasonParser {
         print("org: \(externalIPObject.org!)")
         
         return externalIPObject
+    }
+    
+    func parseCityNameByIpPDataResponcer(jsonToParse:AnyObject) -> CityByIPObject{
+        
+        if (jsonToParse as! NSDictionary)["ip"] as? String != nil {
+            cityByIPObject.ip = (jsonToParse as! NSDictionary)["ip"] as? String
+        }else{
+            cityByIPObject.ip = ""
+        }
+        
+        
+        
+        print("ip: \(externalIPObject.ip!)")
+        
+        
+        return cityByIPObject
     }
 }

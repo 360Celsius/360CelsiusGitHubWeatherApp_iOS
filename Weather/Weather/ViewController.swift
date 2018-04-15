@@ -7,33 +7,31 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var responceView: UILabel!
-    
+    var requests: HttpRequests?
+    var coreDataManager:CoreDataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let requests:HttpRequests = HttpRequests()
+
+        requests = HttpRequests()
+        coreDataManager = CoreDataManager()
         
         
-//        requests.runHttpRequestCurrentWeatherData(cityName: "rehovot",tempUnits: "metric"){
-//            (result: String) in
-//            DispatchQueue.main.async {
-//                self.responceView.text = result
-//            }
-//            
-//            //print(result)
-//        }
-        
-        
-        
-        requests.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
-            requests.runHttpRequestGetCityNameByIp(externalIP: resultGetExternalIp.ip!){ (resultGetCityNameByIp: String) in
+        requests?.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
+            
+            self.coreDataManager?.addDataToExternalIpEntitie(externalIPObject: resultGetExternalIp)
+            
+            self.coreDataManager?.getDataFromExternalIpEntitie()
+            
+            self.requests?.runHttpRequestGetCityNameByIp(externalIP: resultGetExternalIp.ip!){ (resultGetCityNameByIp: String) in
             }
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
