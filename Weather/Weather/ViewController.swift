@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         
         requests?.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
             
+            self.coreDataManager?.deleteFromExternalIpEntitie()
+            
             self.coreDataManager?.addDataToExternalIpEntitie(externalIPObject: resultGetExternalIp)
             
             self.coreDataManager?.getDataFromExternalIpEntitie()

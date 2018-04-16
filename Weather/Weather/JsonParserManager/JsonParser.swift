@@ -63,13 +63,13 @@ class JasonParser {
             externalIPObject.org = ""
         }
         
-        print("ip: \(externalIPObject.ip!)")
-        print("hostname: \(externalIPObject.hostname!)")
-        print("city: \(externalIPObject.city!)")
-        print("region: \(externalIPObject.region!)")
-        print("country: \(externalIPObject.country!)")
-        print("loc: \(externalIPObject.loc!)")
-        print("org: \(externalIPObject.org!)")
+//        print("ip: \(externalIPObject.ip!)")
+//        print("hostname: \(externalIPObject.hostname!)")
+//        print("city: \(externalIPObject.city!)")
+//        print("region: \(externalIPObject.region!)")
+//        print("country: \(externalIPObject.country!)")
+//        print("loc: \(externalIPObject.loc!)")
+//        print("org: \(externalIPObject.org!)")
         
         return externalIPObject
     }
@@ -81,12 +81,7 @@ class JasonParser {
         }else{
             cityByIPObject.ip = ""
         }
-        
-        
-        
-        print("ip: \(externalIPObject.ip!)")
-        
-        
+//        print("ip: \(externalIPObject.ip!)")
         return cityByIPObject
     }
 }

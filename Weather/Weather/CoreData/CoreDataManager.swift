@@ -52,6 +52,29 @@ class CoreDataManager {
         }
     }
     
+    func deleteFromExternalIpEntitie()->Void{
+        // Initialize Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ExternalIpData")
+        
+        // Configure Fetch Request
+        fetchRequest.includesPropertyValues = false
+        
+        do {
+            let items = try context?.fetch(fetchRequest) as! [NSManagedObject]
+            
+            for item in items {
+                context?.delete(item)
+            }
+            
+            // Save Changes
+            try context?.save()
+            
+        } catch {
+            // Error Handling
+            // ...
+        }
+    }
+    
     func getDataFromExternalIpEntitie()->Void{
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ExternalIpData")
