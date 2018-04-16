@@ -35,6 +35,8 @@ class CoreDataManager {
         
     }
     
+    
+    ///////////////////////// ecternal ip //////////////////////////////////////
     func addDataToExternalIpEntitie(externalIPObject: ExternalIPObject)->Void{
         
         let newIPdata = NSManagedObject(entity: entity!, insertInto: context)
@@ -75,13 +77,28 @@ class CoreDataManager {
         }
     }
     
-    func getDataFromExternalIpEntitie()->Void{
+    func getDataFromExternalIpEntitie()->[ExternalIPObject]{
+        
+        var externalIPObjects: [ExternalIPObject] = []
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ExternalIpData")
         request.returnsObjectsAsFaults = false
+    
         do {
             let result = try context?.fetch(request)
             for data in result as! [NSManagedObject] {
+                
+                let externalIPObject: ExternalIPObject = ExternalIPObject()
+                
+                externalIPObject.city = data.value(forKey: "city") as? String
+                externalIPObject.country = data.value(forKey: "country") as? String
+                externalIPObject.ip = data.value(forKey: "ip") as? String
+                externalIPObject.loc = data.value(forKey: "loc") as? String
+                externalIPObject.org = data.value(forKey: "org") as? String
+                externalIPObject.region = data.value(forKey: "region") as? String
+                
+                externalIPObjects.append(externalIPObject)
+                
                 print("city \(data.value(forKey: "city") as! String)")
                 print("country \(data.value(forKey: "country") as! String)")
                 print("ip \(data.value(forKey: "ip") as! String)")
@@ -90,9 +107,15 @@ class CoreDataManager {
                 print("region \(data.value(forKey: "region") as! String)")
             }
             
+            
+            
         } catch {
             print("Failed")
         }
+        
+        return externalIPObjects
     }
+    
+    ////////////////////////////////////////////////////////////////////////////////
     
 }

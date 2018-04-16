@@ -26,7 +26,8 @@ class HttpRequests {
                 do {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    complition(self.jsonParser.parseExternalIPDataResponcer(jsonToParse:jsonSerialized as AnyObject))
+                    let externalIPObject = self.jsonParser.parseExternalIPDataResponcer(jsonToParse:jsonSerialized as AnyObject)
+                    complition(externalIPObject)
                 }  catch let error as NSError {
                     print(error.localizedDescription)
                 }
