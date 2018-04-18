@@ -39,7 +39,7 @@ class HttpRequests {
     }
     
     
-    func runHttpRequestGetCityNameByIp(externalIP:String, complition: @escaping (_ result: String)->Void) {
+    func runHttpRequestGetCityNameByIp(externalIP:String, complition: @escaping (_ result: CityByIPObject)->Void) {
         let url = URL(string: "\(constant.locationByExternalIpUrl)\(externalIP)/json/")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
@@ -47,8 +47,8 @@ class HttpRequests {
                 do {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    self.jsonParser.parseCityNameByIpPDataResponcer(jsonToParse:jsonSerialized as AnyObject)
-                    
+                    let cityByExternalIpPObject = self.jsonParser.parseCityNameByIpPDataResponcer(jsonToParse:jsonSerialized as AnyObject)
+                    complition(cityByExternalIpPObject)
                 }  catch let error as NSError {
                     print(error.localizedDescription)
                 }

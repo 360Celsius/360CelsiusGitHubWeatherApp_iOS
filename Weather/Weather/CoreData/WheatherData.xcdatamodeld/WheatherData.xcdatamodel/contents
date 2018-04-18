@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityByExternalIpData" representedClassName="CityByExternalIpData" syncable="YES" codeGenerationType="class">
+        <attribute name="asn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continent_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country_calling_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="languages" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="org" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timezone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="utc_offset" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ExternalIpData" representedClassName="ExternalIpData" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,5 +29,6 @@
     </entity>
     <elements>
         <element name="ExternalIpData" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="CityByExternalIpData" positionX="-63" positionY="27" width="128" height="300"/>
     </elements>
 </model>

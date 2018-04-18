@@ -25,13 +25,20 @@ class ViewController: UIViewController {
         requests?.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
             
             self.coreDataManager?.deleteFromExternalIpEntitie()
-            
             self.coreDataManager?.addDataToExternalIpEntitie(externalIPObject: resultGetExternalIp)
             
             var externalIPfromCoreData: String?
             externalIPfromCoreData = self.coreDataManager?.getDataFromExternalIpEntitie()[0].ip
             
-            self.requests?.runHttpRequestGetCityNameByIp(externalIP: externalIPfromCoreData!){ (resultGetCityNameByIp: String) in
+            self.requests?.runHttpRequestGetCityNameByIp(externalIP: externalIPfromCoreData!){ (resultGetCityNameByIp: CityByIPObject) in
+                
+                self.coreDataManager?.deleteFromCityByExternalIpEntitie()
+                self.coreDataManager?.addDataToCityByExternalIpEntitie(cityByExternalIpObject: resultGetCityNameByIp)
+                
+                var cityNamefromCoreData: String?
+                cityNamefromCoreData = self.coreDataManager?.getDataFromFromCityByExternalIpEntitie()[0].city
+                
+                print(cityNamefromCoreData!)
             }
         }
         

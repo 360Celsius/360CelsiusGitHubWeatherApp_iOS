@@ -63,14 +63,6 @@ class JasonParser {
             externalIPObject.org = ""
         }
         
-//        print("ip: \(externalIPObject.ip!)")
-//        print("hostname: \(externalIPObject.hostname!)")
-//        print("city: \(externalIPObject.city!)")
-//        print("region: \(externalIPObject.region!)")
-//        print("country: \(externalIPObject.country!)")
-//        print("loc: \(externalIPObject.loc!)")
-//        print("org: \(externalIPObject.org!)")
-        
         return externalIPObject
     }
     
@@ -81,7 +73,102 @@ class JasonParser {
         }else{
             cityByIPObject.ip = ""
         }
-//        print("ip: \(externalIPObject.ip!)")
+
+        if (jsonToParse as! NSDictionary)["city"] as? String != nil {
+            cityByIPObject.city = (jsonToParse as! NSDictionary)["city"] as? String
+        }else{
+            cityByIPObject.city = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["region"] as? String != nil {
+            cityByIPObject.region = (jsonToParse as! NSDictionary)["region"] as? String
+        }else{
+            cityByIPObject.region = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["region_code"] as? String != nil {
+            cityByIPObject.region_code = (jsonToParse as! NSDictionary)["region_code"] as? String
+        }else{
+            cityByIPObject.region_code = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["country"] as? String != nil {
+            cityByIPObject.country = (jsonToParse as! NSDictionary)["country"] as? String
+        }else{
+            cityByIPObject.country = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["country_name"] as? String != nil {
+            cityByIPObject.country_name = (jsonToParse as! NSDictionary)["country_name"] as? String
+        }else{
+            cityByIPObject.country_name = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["continent_code"] as? String != nil {
+            cityByIPObject.continent_code = (jsonToParse as! NSDictionary)["continent_code"] as? String
+        }else{
+            cityByIPObject.continent_code = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["postal"] as? String != nil {
+            cityByIPObject.postal = (jsonToParse as! NSDictionary)["postal"] as? String
+        }else{
+            cityByIPObject.postal = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["latitude"] as? Double != nil {
+            cityByIPObject.latitude = (jsonToParse as! NSDictionary)["latitude"] as? Double
+        }else{
+            cityByIPObject.latitude = 0
+        }
+        
+        if (jsonToParse as! NSDictionary)["latitude"] as? Double != nil {
+            cityByIPObject.longitude = (jsonToParse as! NSDictionary)["longitude"] as? Double
+        }else{
+            cityByIPObject.longitude = 0
+        }
+        
+        if (jsonToParse as! NSDictionary)["timezone"] as? String != nil {
+            cityByIPObject.timezone = (jsonToParse as! NSDictionary)["timezone"] as? String
+        }else{
+            cityByIPObject.timezone = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["utc_offset"] as? String != nil {
+            cityByIPObject.utc_offset = (jsonToParse as! NSDictionary)["utc_offset"] as? String
+        }else{
+            cityByIPObject.utc_offset = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["country_calling_code"] as? String != nil {
+            cityByIPObject.country_calling_code = (jsonToParse as! NSDictionary)["country_calling_code"] as? String
+        }else{
+            cityByIPObject.country_calling_code = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["currency"] as? String != nil {
+            cityByIPObject.currency = (jsonToParse as! NSDictionary)["currency"] as? String
+        }else{
+            cityByIPObject.currency = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["languages"] as? String != nil {
+            cityByIPObject.languages = (jsonToParse as! NSDictionary)["languages"] as? String
+        }else{
+            cityByIPObject.languages = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["asn"] as? String != nil {
+            cityByIPObject.asn = (jsonToParse as! NSDictionary)["asn"] as? String
+        }else{
+            cityByIPObject.asn = ""
+        }
+        
+        if (jsonToParse as! NSDictionary)["org"] as? String != nil {
+            cityByIPObject.org = (jsonToParse as! NSDictionary)["org"] as? String
+        }else{
+            cityByIPObject.org = ""
+        }
         return cityByIPObject
     }
 }

@@ -17,8 +17,8 @@ class CityByIPObject {
     var country_name:String?
     var continent_code:String?
     var postal:String?
-    var latitude:String?
-    var longitude:String?
+    var latitude:Double?
+    var longitude:Double?
     var timezone:String?
     var utc_offset:String?
     var country_calling_code:String?
