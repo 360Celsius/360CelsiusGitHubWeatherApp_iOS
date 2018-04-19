@@ -11,12 +11,13 @@ import CoreData
 
 class CoreDataManager {
 
-
+    // singelton
+    static let coreDataManagerInstance = CoreDataManager()
+    
     var persistentContainer: NSPersistentContainer
     var context: NSManagedObjectContext?
-
     
-    init(){
+    private init() {
         
         persistentContainer = {
             

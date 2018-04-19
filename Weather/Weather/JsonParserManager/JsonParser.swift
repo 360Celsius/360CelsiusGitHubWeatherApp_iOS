@@ -13,12 +13,15 @@ class JasonParser {
     
     let externalIPObject:ExternalIPObject
     let cityByIPObject:CityByIPObject
+    let currentWeatherDataObject: CurrentWeatherDataObject
     
     init(){
          externalIPObject = ExternalIPObject()
          cityByIPObject = CityByIPObject()
+         currentWeatherDataObject = CurrentWeatherDataObject()
     }
     
+    // parse external ip
     func parseExternalIPDataResponcer(jsonToParse:AnyObject) -> ExternalIPObject {
         
         if (jsonToParse as! NSDictionary)["ip"] as? String != nil {
@@ -66,6 +69,7 @@ class JasonParser {
         return externalIPObject
     }
     
+    //parse city name by ip
     func parseCityNameByIpPDataResponcer(jsonToParse:AnyObject) -> CityByIPObject{
         
         if (jsonToParse as! NSDictionary)["ip"] as? String != nil {
@@ -170,5 +174,11 @@ class JasonParser {
             cityByIPObject.org = ""
         }
         return cityByIPObject
+    }
+    
+    //parse current wheather
+    func parceCurrentWheatherDataResponce(jsonToParse:AnyObject)->CurrentWeatherDataObject{
+        
+        return currentWeatherDataObject
     }
 }

@@ -10,33 +10,55 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var segmentedControl: UISegmentedControl!
+
 
     @IBOutlet weak var responceView: UILabel!
     var requests: HttpRequests?
-    var coreDataManager:CoreDataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         requests = HttpRequests()
-        coreDataManager = CoreDataManager()
         
         
         requests?.runHttpRequestGetExternalIp(){ (resultGetExternalIp: ExternalIPObject) in
             
-            self.coreDataManager?.deleteFromExternalIpEntitie()
-            self.coreDataManager?.addDataToExternalIpEntitie(externalIPObject: resultGetExternalIp)
+            CoreDataManager.coreDataManagerInstance.deleteFromExternalIpEntitie()
+            CoreDataManager.coreDataManagerInstance.addDataToExternalIpEntitie(externalIPObject: resultGetExternalIp)
             
             var externalIPfromCoreData: String?
-            externalIPfromCoreData = self.coreDataManager?.getDataFromExternalIpEntitie()[0].ip
+            externalIPfromCoreData = CoreDataManager.coreDataManagerInstance.getDataFromExternalIpEntitie()[0].ip
             
             self.requests?.runHttpRequestGetCityNameByIp(externalIP: externalIPfromCoreData!){ (resultGetCityNameByIp: CityByIPObject) in
                 
-                self.coreDataManager?.deleteFromCityByExternalIpEntitie()
-                self.coreDataManager?.addDataToCityByExternalIpEntitie(cityByExternalIpObject: resultGetCityNameByIp)
+                CoreDataManager.coreDataManagerInstance.deleteFromCityByExternalIpEntitie()
+                CoreDataManager.coreDataManagerInstance.addDataToCityByExternalIpEntitie(cityByExternalIpObject: resultGetCityNameByIp)
                 
                 var cityNamefromCoreData: String?
-                cityNamefromCoreData = self.coreDataManager?.getDataFromFromCityByExternalIpEntitie()[0].city
+                cityNamefromCoreData = CoreDataManager.coreDataManagerInstance.getDataFromFromCityByExternalIpEntitie()[0].city
                 
                 print(cityNamefromCoreData!)
             }

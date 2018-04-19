@@ -18,6 +18,7 @@ class HttpRequests {
         jsonParser = JasonParser()
     }
     
+    // get external ip
     func runHttpRequestGetExternalIp(complition: @escaping (_ result: ExternalIPObject)->Void) {
         let url = URL(string: "\(constant.externalIpUrl)")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -38,7 +39,7 @@ class HttpRequests {
         task.resume()
     }
     
-    
+    // get city name by externl ip
     func runHttpRequestGetCityNameByIp(externalIP:String, complition: @escaping (_ result: CityByIPObject)->Void) {
         let url = URL(string: "\(constant.locationByExternalIpUrl)\(externalIP)/json/")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -60,6 +61,7 @@ class HttpRequests {
         
     }
     
+    // get current wheather 
     func runHttpRequestCurrentWeatherData(cityName:String, tempUnits:String ,complition: @escaping (_ result: String)->Void) {
         let url = URL(string: "\(constant.apiUrl)weather?q=\(cityName)&units=\(tempUnits)&APPID=\(constant.apiKey)")
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -68,7 +70,7 @@ class HttpRequests {
                 do {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    
+                    let currentWheatherObject = self.jsonParser.parceCurrentWheatherDataResponce(jsonToParse: jsonSerialized as AnyObject)
                     
                 }  catch let error as NSError {
                     print(error.localizedDescription)
