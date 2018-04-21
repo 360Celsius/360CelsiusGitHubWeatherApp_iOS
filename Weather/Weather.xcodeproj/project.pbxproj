@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B114AEB2089B73200EB3E3C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B114AEA2089B73200EB3E3C /* TodayViewController.swift */; };
+		0B114AED2089B74000EB3E3C /* TommorowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B114AEC2089B74000EB3E3C /* TommorowViewController.swift */; };
+		0B114AEF2089B74F00EB3E3C /* FiveDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B114AEE2089B74F00EB3E3C /* FiveDaysViewController.swift */; };
+		0B114AF12089B76400EB3E3C /* TenDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B114AF02089B76400EB3E3C /* TenDaysViewController.swift */; };
+		0B114AF32089B77700EB3E3C /* SixTeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B114AF22089B77700EB3E3C /* SixTeenViewController.swift */; };
 		0B37D0AE208775D1001917E9 /* CurrentWeatherDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B37D0AD208775D1001917E9 /* CurrentWeatherDataObject.swift */; };
 		0B3896A7207BB4E800F62611 /* HttpRequestsConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3896A6207BB4E800F62611 /* HttpRequestsConsts.swift */; };
 		0B43D326207F28F1003D0ED4 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43D325207F28F1003D0ED4 /* JsonParser.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B114AEA2089B73200EB3E3C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0B114AEC2089B74000EB3E3C /* TommorowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TommorowViewController.swift; sourceTree = "<group>"; };
+		0B114AEE2089B74F00EB3E3C /* FiveDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysViewController.swift; sourceTree = "<group>"; };
+		0B114AF02089B76400EB3E3C /* TenDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenDaysViewController.swift; sourceTree = "<group>"; };
+		0B114AF22089B77700EB3E3C /* SixTeenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixTeenViewController.swift; sourceTree = "<group>"; };
 		0B37D0AD208775D1001917E9 /* CurrentWeatherDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDataObject.swift; sourceTree = "<group>"; };
 		0B3896A6207BB4E800F62611 /* HttpRequestsConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestsConsts.swift; sourceTree = "<group>"; };
 		0B43D325207F28F1003D0ED4 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
@@ -51,11 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B114ACC2088E38A00EB3E3C /* CustomViewControllers */ = {
+		0B114AE92089B55600EB3E3C /* TabsCustomViewsController */ = {
 			isa = PBXGroup;
 			children = (
+				0B114AEA2089B73200EB3E3C /* TodayViewController.swift */,
+				0B114AEC2089B74000EB3E3C /* TommorowViewController.swift */,
+				0B114AEE2089B74F00EB3E3C /* FiveDaysViewController.swift */,
+				0B114AF02089B76400EB3E3C /* TenDaysViewController.swift */,
+				0B114AF22089B77700EB3E3C /* SixTeenViewController.swift */,
 			);
-			path = CustomViewControllers;
+			path = TabsCustomViewsController;
 			sourceTree = "<group>";
 		};
 		0B3896A5207BB3D100F62611 /* HttpRequests */ = {
@@ -113,7 +128,7 @@
 		0B6C6CB7207910850006FDCE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				0B114ACC2088E38A00EB3E3C /* CustomViewControllers */,
+				0B114AE92089B55600EB3E3C /* TabsCustomViewsController */,
 				0B4A7A982082060500761A4D /* CoreData */,
 				0B43D327207F28FE003D0ED4 /* JsonParserManager */,
 				0B3896A8207C7E6900F62611 /* ModelObjects */,
@@ -202,13 +217,18 @@
 				0B43D32B208110B5003D0ED4 /* CityByIPObject.swift in Sources */,
 				0B6C6CCB207912470006FDCE /* HttpRequests.swift in Sources */,
 				0B3896A7207BB4E800F62611 /* HttpRequestsConsts.swift in Sources */,
+				0B114AF12089B76400EB3E3C /* TenDaysViewController.swift in Sources */,
+				0B114AF32089B77700EB3E3C /* SixTeenViewController.swift in Sources */,
 				0B4A7A97208205F900761A4D /* WheatherData.xcdatamodeld in Sources */,
+				0B114AEF2089B74F00EB3E3C /* FiveDaysViewController.swift in Sources */,
 				0B43D326207F28F1003D0ED4 /* JsonParser.swift in Sources */,
 				0B37D0AE208775D1001917E9 /* CurrentWeatherDataObject.swift in Sources */,
+				0B114AED2089B74000EB3E3C /* TommorowViewController.swift in Sources */,
 				0B6C6CBB207910850006FDCE /* ViewController.swift in Sources */,
 				0B4A7A9A20827C2200761A4D /* CoreDataManager.swift in Sources */,
 				0B43D329207F294D003D0ED4 /* ExternalIPObject.swift in Sources */,
 				0B6C6CB9207910850006FDCE /* AppDelegate.swift in Sources */,
+				0B114AEB2089B73200EB3E3C /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
